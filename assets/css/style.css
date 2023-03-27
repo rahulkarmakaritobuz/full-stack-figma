@@ -2,8 +2,9 @@
 
 :root {
   --color-primary: white;
-  --color-secondary: rgb(26, 26, 26);
-  --color-heading: rgb(0, 130, 130);
+  --color-secondary: rgb(31, 31, 31);
+  --color-black:rgb(0, 0, 0);
+  --color-heading: #192B5C;
   --color-heading-secondary: purple;
   --transiton-hover-duration: all 0.5s;
   --box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.422);
@@ -17,7 +18,7 @@ body {
 
 .navigation {
   background-color: rgb(242, 241, 242);
-  color: #192B5C;
+  color: var(--color-heading);
   padding: 0.6rem;
   display: flex;
   align-items: center;
@@ -171,16 +172,209 @@ body {
 }
 
 .header {
-    display: flex;
-    flex-direction: column;
-    background-image: url(../images/house1.jpeg);
-    background-size: cover;
-    margin: var(--body-margin);
+  display: flex;
+  background-image: url(../images/house1.jpeg);
+  background-size: cover;
+  margin: var(--body-margin);
+  justify-content: space-around;
+  padding: 5rem 0rem 5rem 0rem;
 }
 .header-title {
-    color:var(--color-primary)
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--color-primary);
 }
 .header-title h1 {
-    font-size: 3rem;
-    font-weight: 100;
+  font-size: 3.5rem;
+  font-weight: 100;
+}
+.about-button button {
+  padding: .7rem 2.2rem .7rem 2.2rem;
+}
+.form-row1 {
+  display: flex;
+}
+.header-form {
+  padding:2rem;
+  background:var(--color-primary);
+  color: var(--color-heading);
+}
+.row1-check,.row2-check,.check-button {
+  margin: 1rem;
+}
+.row1-check input,.row2-check select{
+  border:none;
+  border-bottom: 1px solid black;
+}
+
+.row2-check select{
+ min-width: 100%;
+}
+.check-button {
+  min-width: 90%;
+  padding: .7rem 0rem .7rem 0rem;
+  border: none;
+  background-color: var(--color-heading);
+  color: var(--color-primary);
+}
+
+.welcome {
+   background: none;
+}
+.welcome .header-title {
+  max-width: 30%;
+}
+.welcome .header-title h3{
+  color: var(--color-heading);
+  font-weight: normal;
+}
+.welcome .header-title h2 {
+  color: var(--color-black);
+  font-weight: lighter;
+  font-size: 3rem;
+}
+.welcome .header-title p {
+  color: var(--color-secondary);
+}
+.welcome .poster{
+  max-width: 50%;
+}
+.poster {
+  display: flex;
+  flex-wrap: wrap;
+}
+.poster-image1 {
+  max-width: 45%;
+  z-index: 1;
+}
+.poster-image2,.poster-image3 {
+  max-width: 60%;
+}
+.poster-image2 {
+  z-index:2 ;
+  margin-left:16rem;
+  margin-top:-14rem;
+}
+.poster-image3 {
+  z-index: 3;
+  margin-top: -4rem;
+  margin-left: 7rem;
+}
+
+.rooms{
+  display: flex;
+  max-width: 100%;
+}
+
+.rooms-details {
+  display: flex;
+  flex-direction: column;
+  max-width: 30%;
+  padding: 2rem;
+  color:var(--color-primary);
+  background-color: var(--color-heading);
+}
+.rooms-details h2,.rooms-details h3 {
+  font-weight: lighter;
+}
+/* .rooms-details h3 {
+  color:rgb(206, 125, 125)
+} */
+.rooms-details h2 {
+  font-size: 2.5rem;
+}
+.details-unit {
+  display: flex;
+  justify-content: space-between;
+}
+.swiper {
+  max-width: 70%;
+  margin: 0;
+  display: flex;
+}
+.swiper-wrapper img {
+  max-width: 100%;
+}
+.swiper-button-next, .swiper-button-prev {
+  color :var(--color-primary);
+}
+.details-button button {
+  font-size: 1rem;
+  padding:.7rem 2.5rem .7rem 2.5rem;
+  border: 2px solid var(--color-primary) ;
+  background:none;
+  color: var(--color-primary);
+}
+
+.benifits{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem 0rem 3rem 0rem;
+}
+.benifits-items {
+  display: flex;
+  justify-content: center;
+}
+.benifits p {
+  font-size: 3rem;
+  font-weight: lighter;
+  margin-top: 0;
+}
+.benifits-card {
+  max-width: 20%;
+  margin: 1rem;
+}
+.benifits-card h3 {
+  font-size: 1.5rem;
+}
+.benifits-card p {
+  font-size: 1.2rem;
+}
+
+.activities {
+  display: flex;
+}
+.activity{
+  display: flex;
+}
+.activities .rooms-details {
+  max-width: 43%;
+  padding: 4rem;
+  justify-content: center;
+}
+.activity-image img{
+  max-width: 100%;
+}
+.activities .rooms-details ul {
+  margin-bottom: 2rem;
+}
+
+.service .title{
+  max-width: 50%;
+  text-align: center;
+}
+.service-card .card-image img{
+  max-width: 100%;
+}
+.service-card h2{
+  font-weight: lighter;
+  font-size: 2rem;
+}
+.service .details-button{
+  margin-top: 3rem;
+}
+.service .details-button button {
+  border: 2px solid var(--color-black);
+  color: var(--color-black);
+}
+
+.discover {
+  background-image: url("../images/pool.jpeg");
+}
+.discover .discover-card {
+  max-width: 30%;
+  justify-content: end;
+  background-color: var(--color-primary);
 }

@@ -9,9 +9,9 @@ menuButton.addEventListener("click", (e) => {
 });
 
 back.addEventListener("click", (e) => {
-  //   console.log(e);
   menuBar.classList.toggle("ul-slider-animation");
   menuBar.classList.toggle("slide-back");
+
   setTimeout(() => {
     menuBar.classList.toggle("menu-hide");
   }, 490);
@@ -20,10 +20,10 @@ back.addEventListener("click", (e) => {
 const lang = document.querySelector("#lang");
 const langList = document.querySelectorAll(".dropdown-content a");
 
-console.log(langList);
 for (let i = 0; i < langList.length; i++) {
   langList[i].setAttribute("onclick", "select(this)");
 }
+
 function select(element) {
   let selectData = element.textContent;
   console.log(selectData);

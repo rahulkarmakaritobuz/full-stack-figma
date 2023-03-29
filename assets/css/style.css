@@ -173,11 +173,14 @@ body {
 .header {
   display: flex;
   flex-direction: column;
-  background-image: url(../images/house1.jpeg);
+  background-image: url(http://localhost:8080/images.header.house1);
   background-size: cover;
   margin: var(--body-margin);
   justify-content: space-around;
   padding: 5rem 0rem 5rem 0rem;
+}
+.header-margin {
+  margin-left: 5rem;
 }
 .header-title {
   display: flex;

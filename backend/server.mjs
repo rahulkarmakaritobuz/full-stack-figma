@@ -13,13 +13,18 @@ const getPath = (requestLink) => {
   return way;
 };
 
-const server = http.createServer((req, res) => {
+const server = http.createServer(async (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Headers", "*");
   let links = req.url.split(".");
 
   //   console.log("links : ", links);
-  if (req.url === "/join-us" && req.method === "POST") {
+  if (req.url === "/card-data") {
+    res.writeHead(200, { "content-Type": "application/json" });
+    const data = await serverModule.readCardData("cardData.txt");
+    res.end(data);
+    console.log(JSON.parse(data));
+  } else if (req.url === "/join-us" && req.method === "POST") {
     res.writeHead(200, { "content-Type": "application/json" });
     let chunks = "";
     req.on("data", (chunk) => {
@@ -30,7 +35,7 @@ const server = http.createServer((req, res) => {
       let parsedData = querystring.parse(chunks);
       console.log("ParsedData : ", parsedData);
       if (Object.keys(parsedData).length !== 0) {
-        serverModule.updateEmail(parsedData);
+        serverModule.modifyData("emailDB", "emailData.txt", parsedData);
       }
     });
   } else if (req.url === "/search-room" && req.method === "POST") {
@@ -45,7 +50,7 @@ const server = http.createServer((req, res) => {
       let parsedData = querystring.parse(chunks);
       console.log("parsedData : ", parsedData);
       if (Object.keys(parsedData).length !== 0) {
-        serverModule.modifyData(parsedData);
+        serverModule.modifyData("formDB", "formData.txt", parsedData);
       }
     });
     res.end();

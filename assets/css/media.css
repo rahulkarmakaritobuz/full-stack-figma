@@ -6,6 +6,9 @@
     .header-title {
         text-align: start;
     }
+    .header-margin {
+        margin-left: 5rem;
+    }
     .header-form {
         padding: 2rem;
     }
@@ -13,9 +16,6 @@
     .row2-check,
     .check-button {
     margin: 1rem;
-    }
-    .form-row1 {
-        flex-direction: row;
     }
 
     .welcome .header-title {

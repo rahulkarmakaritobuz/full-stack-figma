@@ -18,7 +18,6 @@ const server = http.createServer(async (req, res) => {
   res.setHeader("Access-Control-Allow-Headers", "*");
   let links = req.url.split(".");
 
-  //   console.log("links : ", links);
   if (req.url === "/room-data") {
     res.writeHead(200, { "content-Type": "application/json" });
     const data = await serverModule.readCardData("carouselDB", "roomData.txt");
@@ -62,7 +61,6 @@ const server = http.createServer(async (req, res) => {
   } else if (links[0] === "/images" && links.length > 1) {
     const way = getPath(req.url);
     console.log("way : ", way);
-    // res.setHeader("Access-Control-Allow-Origin", "*");
     res.writeHead(200, { "content-Type": "image/jpeg" });
     fs.readFile(way, function (err, content) {
       res.end(content);

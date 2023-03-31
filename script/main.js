@@ -10,8 +10,7 @@ let formDB = [];
 
 const emailId = document.getElementById("emailId");
 const joinUs = document.getElementById("join");
-console.log(emailId.value);
-console.log(joinUs);
+
 const join = () => {
   fetch("http://localhost:8080/join-us", {
     method: "POST",
@@ -28,14 +27,6 @@ const join = () => {
 };
 
 const checkButton = async () => {
-  // formDB.push({
-  //   "check-in-date": checkInDate.value,
-  //   "check-out-date": checkOutDate.value,
-  //   adults: adults.value,
-  //   children: children.value,
-  // });
-  // console.log(formDB);
-
   await fetch("http://localhost:8080/search-room", {
     method: "POST",
     headers: {
@@ -61,15 +52,8 @@ const cardName = document.querySelectorAll(".service-name");
 const cardTitle = document.querySelectorAll(".service-title");
 const cardDetails = document.querySelectorAll(".service-details");
 
-console.log("serviceCards", serviceCards);
-console.log("cardImage", cardImage);
-console.log("cardName", cardName);
-console.log("cardTitle", cardTitle);
-console.log("cardDetails", cardDetails);
-
 const getData = (apiId) => {
   let result = fetch(apiId).then((res) => {
-    console.log(res);
     return res.json();
   });
   return result;
@@ -100,8 +84,6 @@ let slideCount = 0;
 let flag = true;
 
 const insertCarouselData = (res, count) => {
-  console.log("res : ", res);
-  console.log("count : ", count);
   roomType.textContent = res[count].roomType;
   price.textContent = res[count].price;
   roomTitle.textContent = res[count].roomTitle;
@@ -118,7 +100,6 @@ getData("http://localhost:8080/room-data").then((res) => {
   }
   nextButtom.addEventListener("click", (e) => {
     if (flag === false) slideCount++;
-    console.log("nextButton");
     if (slideCount > totalSlide.length) {
       slideCount = totalSlide.length - 1;
     } else {
@@ -129,11 +110,9 @@ getData("http://localhost:8080/room-data").then((res) => {
   });
   prevButton.addEventListener("click", (e) => {
     if (flag === true) slideCount--;
-    console.log("prevbutton", slideCount);
-    if (slideCount <= 0 || slideCount === totalSlide.length - 1) {
+    if (slideCount <= 0) {
       slideCount = 0;
       insertCarouselData(res, slideCount);
-      // console.log("slideCount :", slideCount);
     } else {
       slideCount--;
       insertCarouselData(res, slideCount);

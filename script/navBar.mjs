@@ -26,7 +26,5 @@ for (let i = 0; i < langList.length; i++) {
 
 const select = (element) => {
   let selectData = element.textContent;
-  console.log(selectData);
-  console.log(lang);
   lang.innerText = selectData;
 };

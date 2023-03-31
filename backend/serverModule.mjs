@@ -2,7 +2,7 @@
 import * as fs from "fs/promises";
 import * as path from "path";
 import { json } from "stream/consumers";
-import * as card from "./database/cards/cardData.mjs";
+import * as card from "./database/carouselDB/roomData.mjs";
 
 export const modifyData = async (folder, fileName, totalFormData) => {
   console.log(totalFormData);
@@ -12,8 +12,8 @@ export const modifyData = async (folder, fileName, totalFormData) => {
 
 export const onceWrite = async () => {
   await fs.writeFile(
-    "./database/cards/cardData.txt",
-    JSON.stringify(card.cardData)
+    "./database/carouselDB/roomData.txt",
+    JSON.stringify(card.roomData)
   );
 };
 
@@ -22,8 +22,8 @@ export const onceWrite = async () => {
 //   await fs.appendFile("./database/emailData.txt", JSON.stringify(emailIds));
 // };
 // module.export = { modifyData };
-export const readCardData = async (fileName) => {
-  const filePath = path.join(path.resolve(), "database", "cards", fileName);
+export const readCardData = async (folder, fileName) => {
+  const filePath = path.join(path.resolve(), "database", folder, fileName);
   console.log(filePath);
   const data = await fs.readFile(filePath);
   // console.log(data);

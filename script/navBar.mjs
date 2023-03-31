@@ -1,7 +1,3 @@
-// const fs = require("fs");
-
-// NAVbar
-
 const menuBar = document.getElementById("menuBar");
 const menuButton = document.getElementById("menuButton");
 const back = document.getElementById("back");
@@ -28,35 +24,9 @@ for (let i = 0; i < langList.length; i++) {
   langList[i].setAttribute("onclick", "select(this)");
 }
 
-function select(element) {
+const select = (element) => {
   let selectData = element.textContent;
   console.log(selectData);
   console.log(lang);
   lang.innerText = selectData;
-}
-
-// Form card
-
-const checkInDate = document.getElementById("checkInDate");
-const checkOutDate = document.getElementById("checkOutDate");
-const adults = document.getElementById("adults");
-const children = document.getElementById("children");
-
-// const createFile = (value) => {
-//   fs.writeFile("formDB.txt", value, (err) => {
-//     if (err) throw err;
-//   });
-//   console.log("File create successfully!");
-// };
-
-let formDB = [];
-
-const checkButton = () => {
-  formDB.push({
-    "check-in-date": checkInDate.value,
-    "check-out-date": checkOutDate.value,
-    adults: adults.value,
-    children: children.value,
-  });
-  // createFile(formDB);
 };

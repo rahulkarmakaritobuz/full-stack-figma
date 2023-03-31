@@ -112,7 +112,7 @@
             <option value="5">5</option>
           </select>
         </div>
-        <button onclick="checkButton()" class="check-button">
+        <button id="check" onclick="checkButton()" class="check-button">
           Check availablity
         </button>
       </div>
@@ -132,7 +132,7 @@
       <div class="poster">
         <img
           class="poster-image1"
-          src="./assets/images/Welcome/man1.webp"
+          src="http://localhost:8080/images.welcome.man1"
           alt="A man image"
         />
 
@@ -152,9 +152,9 @@
     <section class="rooms">
       <div class="rooms-details">
         <h3>ELEGANCE AND COMFORT</h3>
-        <h2>Standart Room</h2>
-        <p>From: <span>$150</span> / night</p>
-        <p>
+        <h2 class="room-type">Standart Room</h2>
+        <p>From: <span class="price">$150</span> / night</p>
+        <p class="room-title">
           With wide and comfortable areas and daylight pouring in from the...
         </p>
         <div class="details-unit">
@@ -165,10 +165,10 @@
             <h3>View:</h3>
           </div>
           <div class="details-unit-value">
-            <p>Queen Size Bed</p>
-            <p>2 adults, 1 children</p>
-            <p>55 sqm</p>
-            <p>garden view</p>
+            <p class="bed">Queen Size Bed</p>
+            <p class="capacity">2 adults, 1 children</p>
+            <p class="room-size">55 sqm</p>
+            <p class="view">garden view</p>
           </div>
         </div>
         <div class="details-button">
@@ -193,8 +193,8 @@
             alt="room1"
           />
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div id="next" class="swiper-button-next"></div>
+        <div id="prev" class="swiper-button-prev"></div>
       </div>
     </section>
     <section class="benifits">
@@ -230,9 +230,7 @@
         <p>
           Proin nec leo vel metus faucibus vehicula. Donec vulputate in magna
           eget egestas. Aliquam ac facilisis ante, sit amet tincidunt ante.
-          Fusce dolor sapien, sodales at velit non, lobortis volutpat ante.
-          Integer porta molestie volutpat. Etiam tristique, sem vitae tincidunt
-          gravida, eros nulla dapibus lacus, ut dapibus diam dui vel tortor.
+          Fusce dolor sapien, sodales at velit non, lobortis volutpat ante.s
         </p>
         <p>Explore More --></p>
       </div>
@@ -257,8 +255,6 @@
           Proin nec leo vel metus faucibus vehicula. Donec vulputate in magna
           eget egestas. Aliquam ac facilisis ante, sit amet tincidunt ante.
           Fusce dolor sapien, sodales at velit non, lobortis volutpat ante.
-          Integer porta molestie volutpat. Etiam tristique, sem vitae tincidunt
-          gravida, eros nulla dapibus lacus, ut dapibus diam dui vel tortor.
         </p>
         <ul>
           <li>Thermal wather with ancient baths</li>
@@ -281,13 +277,14 @@
         <div class="benifits-card service-card">
           <div class="card-image">
             <img
+              class="service-image"
               src="http://localhost:8080/images.service.card1.png"
               alt="card1 image"
             />
           </div>
-          <h3>WELLNESS</h3>
-          <h2>Dedicated to wellness</h2>
-          <p>
+          <h3 class="service-name">WELLNESS</h3>
+          <h2 class="service-title">Dedicated to wellness</h2>
+          <p class="service-details">
             We use the best ingredients to make special and really tasty dishes.
             Choose what you want to eat every day. You order at the moment.
           </p>
@@ -296,13 +293,14 @@
         <div class="benifits-card service-card">
           <div class="card-image">
             <img
+              class="service-image"
               src="http://localhost:8080/images.service.card2"
               alt="card1 image"
             />
           </div>
-          <h3>GIFT CARDS</h3>
-          <h2>Dedicated to wellness</h2>
-          <p>
+          <h3 class="service-name">GIFT CARDS</h3>
+          <h2 class="service-title">Dedicated to wellness</h2>
+          <p class="service-details">
             We use the best ingredients to make special and really tasty dishes.
             Choose what you want to eat every day. You order at the moment.
           </p>
@@ -311,13 +309,14 @@
         <div class="benifits-card service-card">
           <div class="card-image">
             <img
+              class="service-image"
               src="http://localhost:8080/images.service.card3"
               alt="card1 image"
             />
           </div>
-          <h3>MIKALTO SHOP</h3>
-          <h2>Dedicated to wellness</h2>
-          <p>
+          <h3 class="service-name">MIKALTO SHOP</h3>
+          <h2 class="service-title">Dedicated to wellness</h2>
+          <p class="service-details">
             We use the best ingredients to make special and really tasty dishes.
             Choose what you want to eat every day. You order at the moment.
           </p>
@@ -326,13 +325,14 @@
         <div class="benifits-card service-card">
           <div class="card-image">
             <img
+              class="service-image"
               src="http://localhost:8080/images.service.card4"
               alt="card1 image"
             />
           </div>
-          <h3>EXPERIENCE</h3>
-          <h2>Dedicated to wellness</h2>
-          <p>
+          <h3 class="service-name">EXPERIENCE</h3>
+          <h2 class="service-title">Dedicated to wellness</h2>
+          <p class="service-details">
             We use the best ingredients to make special and really tasty dishes.
             Choose what you want to eat every day. You order at the moment.
           </p>
@@ -519,8 +519,12 @@
         <h6>STORIES DELOVERED STRAIGHT</h6>
         <h2>Side by Side with Nature</h2>
         <div class="suscribe-button">
-          <input type="email" placeholder="Enter your email address..." />
-          <button>Join Us</button>
+          <input
+            id="emailId"
+            type="email"
+            placeholder="Enter your email address..."
+          />
+          <button id="join" onclick="join()">Join Us</button>
         </div>
         <h6>Will be used accourding with our privacy policy</h6>
       </div>
@@ -598,6 +602,7 @@
       </div>
     </section>
 
+    <script src="./script/navBar.mjs"></script>
     <script src="./script/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 

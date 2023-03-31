@@ -19,9 +19,14 @@ const server = http.createServer(async (req, res) => {
   let links = req.url.split(".");
 
   //   console.log("links : ", links);
-  if (req.url === "/card-data") {
+  if (req.url === "/room-data") {
     res.writeHead(200, { "content-Type": "application/json" });
-    const data = await serverModule.readCardData("cardData.txt");
+    const data = await serverModule.readCardData("carouselDB", "roomData.txt");
+    res.end(data);
+    console.log(JSON.parse(data));
+  } else if (req.url === "/card-data") {
+    res.writeHead(200, { "content-Type": "application/json" });
+    const data = await serverModule.readCardData("cards", "cardData.txt");
     res.end(data);
     console.log(JSON.parse(data));
   } else if (req.url === "/join-us" && req.method === "POST") {

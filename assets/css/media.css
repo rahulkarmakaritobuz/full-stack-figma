@@ -57,6 +57,7 @@
 
     .service .title {
         max-width: 50%;
+        font-size: 3rem;
     }
     .service-card {
         text-align:left;

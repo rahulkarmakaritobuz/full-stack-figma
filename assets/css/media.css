@@ -28,7 +28,7 @@
   .rooms {
     flex-direction: row;
   }
-  .rooms-details {
+  .rooms .rooms-details {
     max-width: 30vw;
     padding: 2rem;
   }
@@ -39,6 +39,9 @@
   .benifits {
     text-align: start;
   }
+  .benifits > p {
+    font-size: 2.5rem;
+  }
   .benifits-items {
     flex-direction: row;
   }
@@ -46,7 +49,16 @@
     max-width: 20%;
     margin: 1rem;
   }
-
+  .activity-image {
+    max-width: 50%;
+  }
+  .activities-container {
+    margin: 2rem;
+    max-width: 100%;
+  }
+  .activities .rooms-details {
+    max-width: 50%;
+  }
   .activities {
     flex-wrap: nowrap;
   }

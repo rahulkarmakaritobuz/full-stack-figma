@@ -20,9 +20,6 @@ const join = () => {
     body: `id=${Date.now()},&emailID=${emailId.value}`,
   }).then((res) => {
     console.log("Email request completed! ", res);
-    setTimeout(() => {
-      joinUs.textContent = "Submit";
-    }, 3000);
   });
 };
 
@@ -37,11 +34,9 @@ const checkButton = async () => {
     }&noOfAdults=${adults.value}&noOfchildren=${children.value}`,
   }).then((res) => {
     console.log("Request complete! response:", res);
+    check.classList.add("check-button-submit");
     check.textContent = "✓";
-    setTimeout(() => {
-      check.textContent = "Submit";
-    }, 5000);
-  });
+  }, 5000);
 };
 
 // Update Card data
@@ -51,6 +46,7 @@ const cardImage = document.querySelectorAll(".service-image");
 const cardName = document.querySelectorAll(".service-name");
 const cardTitle = document.querySelectorAll(".service-title");
 const cardDetails = document.querySelectorAll(".service-details");
+const serviceImage = document.querySelectorAll(".service-image");
 
 const getData = (apiId) => {
   let result = fetch(apiId).then((res) => {
@@ -64,6 +60,7 @@ getData("http://localhost:8080/card-data").then((res) => {
     cardName[i].textContent = res[i].name;
     cardTitle[i].textContent = res[i].title;
     cardDetails[i].textContent = res[i].details;
+    serviceImage[i].src = res[i].image;
   }
 });
 
@@ -71,7 +68,6 @@ getData("http://localhost:8080/card-data").then((res) => {
 
 const nextButtom = document.getElementById("next");
 const prevButton = document.getElementById("prev");
-const totalSlide = document.querySelectorAll(".swiper-slide");
 const roomType = document.querySelector(".room-type");
 const price = document.querySelector(".price");
 const roomTitle = document.querySelector(".room-title");
@@ -79,11 +75,12 @@ const bed = document.querySelector(".bed");
 const capacity = document.querySelector(".capacity");
 const roomSize = document.querySelector(".room-size");
 const view = document.querySelector(".view");
+const roomImage = document.querySelector(".slider-item");
 
 let slideCount = 0;
 let flag = true;
 
-const insertCarouselData = (res, count) => {
+const insertCarouselData = (res, count, toogleClass) => {
   roomType.textContent = res[count].roomType;
   price.textContent = res[count].price;
   roomTitle.textContent = res[count].roomTitle;
@@ -91,32 +88,35 @@ const insertCarouselData = (res, count) => {
   capacity.textContent = res[count].capacity;
   roomSize.textContent = res[count].roomSize;
   view.textContent = res[count].view;
+  roomImage.src = res[count].picture;
+  roomImage.classList.add(toogleClass);
+  setTimeout(() => {
+    roomImage.classList.remove(toogleClass);
+  }, 1000);
 };
 
 getData("http://localhost:8080/room-data").then((res) => {
+  console.log(res.length);
   if (slideCount === 0) {
     insertCarouselData(res, slideCount);
     slideCount++;
   }
   nextButtom.addEventListener("click", (e) => {
-    if (flag === false) slideCount++;
-    if (slideCount > totalSlide.length) {
-      slideCount = totalSlide.length - 1;
-    } else {
-      insertCarouselData(res, slideCount);
-      slideCount++;
+    if (flag === false) slideCount += 2;
+    if (slideCount > res.length - 1) {
+      slideCount = 0;
     }
+    insertCarouselData(res, slideCount, "ul-slider-animation");
+    slideCount++;
     flag = true;
   });
   prevButton.addEventListener("click", (e) => {
-    if (flag === true) slideCount--;
-    if (slideCount <= 0) {
-      slideCount = 0;
-      insertCarouselData(res, slideCount);
-    } else {
-      slideCount--;
-      insertCarouselData(res, slideCount);
+    if (flag === true && slideCount !== 0) slideCount -= 2;
+    if (slideCount < 0) {
+      slideCount = res.length - 1;
     }
+    insertCarouselData(res, slideCount, "rooms-slider-back");
+    slideCount--;
     flag = false;
   });
 });

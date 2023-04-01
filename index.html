@@ -11,10 +11,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
 
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/media.css" />
@@ -175,26 +171,12 @@
           <button>View Detail</button>
         </div>
       </div>
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <img
-            class="swiper-slide"
-            src="http://localhost:8080/images.room-carousel.room1.webp"
-            alt="room1"
-          />
-          <img
-            class="swiper-slide"
-            src="http://localhost:8080/images.room-carousel.room2.jpeg"
-            alt="room1"
-          />
-          <img
-            class="swiper-slide"
-            src="http://localhost:8080/images.room-carousel.room3.jpeg"
-            alt="room1"
-          />
-        </div>
-        <div id="next" class="swiper-button-next"></div>
-        <div id="prev" class="swiper-button-prev"></div>
+      <div class="rooms-slider">
+        <img class="slider-item" src="" alt="room1" />
+        <i id="next" class="fa-solid fa-angle-right"></i>
+        <i id="prev" class="fa-solid fa-angle-left"></i>
+        <!-- <div  class="swiper-button-next"></div>
+        <div  class="swiper-button-prev"></div> -->
       </div>
     </section>
     <section class="benifits">
@@ -225,45 +207,51 @@
     </section>
     <section class="activities activities-first">
       <div class="rooms-details">
-        <h3>OTHER ACTIVITIES</h3>
-        <h2>Give yourself a smile- Smile & Wellness</h2>
-        <p>
-          Proin nec leo vel metus faucibus vehicula. Donec vulputate in magna
-          eget egestas. Aliquam ac facilisis ante, sit amet tincidunt ante.
-          Fusce dolor sapien, sodales at velit non, lobortis volutpat ante.s
-        </p>
-        <p>Explore More --></p>
+        <div class="activities-container">
+          <h3>OTHER ACTIVITIES</h3>
+          <h2>Give yourself a smile- Smile & Wellness</h2>
+          <p>
+            Proin nec leo vel metus faucibus vehicula. Donec vulputate in magna
+            eget egestas. Aliquam ac facilisis ante, sit amet tincidunt ante.
+            Fusce dolor sapien, sodales at velit non, lobortis volutpat ante.s
+          </p>
+          <p>Explore More --></p>
+        </div>
       </div>
-      <div class="activity-image">
-        <img
-          src="http://localhost:8080/images.activities.pool1.jpeg"
-          alt="pool image1"
-        />
-      </div>
+
+      <img
+        class="activity-image"
+        src="http://localhost:8080/images.activities.pool1.jpeg"
+        alt="pool image1"
+      />
     </section>
     <section class="activities activities-second">
-      <div class="activity-image">
-        <img
-          src="http://localhost:8080/images.activities.pool1.jpeg"
-          alt="pool image1"
-        />
-      </div>
+      <!-- <div class="activity-image"> -->
+      <img
+        class="activity-image"
+        src="http://localhost:8080/images.activities.pool1.jpeg"
+        alt="pool image1"
+      />
+      <!-- </div> -->
+
       <div class="rooms-details">
-        <h3>RECONNECT WITH NATURE</h3>
-        <h2>Give yourself a smile- Smile & Wellness</h2>
-        <p>
-          Proin nec leo vel metus faucibus vehicula. Donec vulputate in magna
-          eget egestas. Aliquam ac facilisis ante, sit amet tincidunt ante.
-          Fusce dolor sapien, sodales at velit non, lobortis volutpat ante.
-        </p>
-        <ul>
-          <li>Thermal wather with ancient baths</li>
-          <li>Turkish bath</li>
-          <li>Turkish sauna</li>
-          <li>Relax and therapy massage</li>
-        </ul>
-        <div class="details-button">
-          <button>View Detail</button>
+        <div class="activities-container">
+          <h3>RECONNECT WITH NATURE</h3>
+          <h2>Give yourself a smile- Smile & Wellness</h2>
+          <p>
+            Proin nec leo vel metus faucibus vehicula. Donec vulputate in magna
+            eget egestas. Aliquam ac facilisis ante, sit amet tincidunt ante.
+            Fusce dolor sapien, sodales at velit non, lobortis volutpat ante.
+          </p>
+          <ul>
+            <li>Thermal wather with ancient baths</li>
+            <li>Turkish bath</li>
+            <li>Turkish sauna</li>
+            <li>Relax and therapy massage</li>
+          </ul>
+          <div class="details-button">
+            <button>View Detail</button>
+          </div>
         </div>
       </div>
     </section>
@@ -276,11 +264,7 @@
       <div class="benifits-items">
         <div class="benifits-card service-card">
           <div class="card-image">
-            <img
-              class="service-image"
-              src="http://localhost:8080/images.service.card1.png"
-              alt="card1 image"
-            />
+            <img class="service-image" src="" alt="card1 image" />
           </div>
           <h3 class="service-name">WELLNESS</h3>
           <h2 class="service-title">Dedicated to wellness</h2>
@@ -292,11 +276,7 @@
         </div>
         <div class="benifits-card service-card">
           <div class="card-image">
-            <img
-              class="service-image"
-              src="http://localhost:8080/images.service.card2"
-              alt="card1 image"
-            />
+            <img class="service-image" src="" alt="card1 image" />
           </div>
           <h3 class="service-name">GIFT CARDS</h3>
           <h2 class="service-title">Dedicated to wellness</h2>
@@ -308,11 +288,7 @@
         </div>
         <div class="benifits-card service-card">
           <div class="card-image">
-            <img
-              class="service-image"
-              src="http://localhost:8080/images.service.card3"
-              alt="card1 image"
-            />
+            <img class="service-image" src="" alt="card1 image" />
           </div>
           <h3 class="service-name">MIKALTO SHOP</h3>
           <h2 class="service-title">Dedicated to wellness</h2>
@@ -324,11 +300,7 @@
         </div>
         <div class="benifits-card service-card">
           <div class="card-image">
-            <img
-              class="service-image"
-              src="http://localhost:8080/images.service.card4"
-              alt="card1 image"
-            />
+            <img class="service-image" src="" alt="card1 image" />
           </div>
           <h3 class="service-name">EXPERIENCE</h3>
           <h2 class="service-title">Dedicated to wellness</h2>
@@ -524,7 +496,7 @@
             type="email"
             placeholder="Enter your email address..."
           />
-          <button id="join" onclick="join()">Join Us</button>
+          <button class="" id="join" onclick="join()">Join Us</button>
         </div>
         <h6>Will be used accourding with our privacy policy</h6>
       </div>
@@ -604,21 +576,5 @@
 
     <script src="./script/navBar.mjs"></script>
     <script src="./script/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
-    <!-- Initialize Swiper -->
-    <script>
-      var swiper = new Swiper(".mySwiper", {
-        cssMode: true,
-        slidesPerView: "1",
-        spaceBetween: 30,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        mousewheel: true,
-        keyboard: true,
-      });
-    </script>
   </body>
 </html>

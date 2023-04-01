@@ -1,114 +1,110 @@
-@media (min-width:768px){
-    .header{
-        display: flex;
-        flex-direction: row;
-    }
-    .header-title {
-        text-align: start;
-    }
-    .header-margin {
-        margin-left: 5rem;
-    }
-    .header-form {
-        padding: 2rem;
-    }
-    .row1-check,
-    .row2-check,
-    .check-button {
+@media (min-width: 768px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+  }
+  .header-title {
+    text-align: start;
+  }
+  .header-margin {
+    margin-left: 5rem;
+  }
+  .header-form {
+    padding: 2rem;
+  }
+  .row1-check,
+  .row2-check,
+  .check-button {
     margin: 1rem;
-    }
+  }
 
-    .welcome .header-title {
-        max-width: 45%;
-    }
-    .welcome .poster {
-        margin-top: 6rem;
-    }
+  .welcome .header-title {
+    max-width: 45%;
+  }
+  .welcome .poster {
+    margin-top: 6rem;
+  }
 
-    .rooms {
-        flex-direction: row;
-    }
-    .rooms-details {
-        max-width: 30%;
-        padding: 2rem;
-    }
-    .swiper {
-        max-width: 70%;
-    }
+  .rooms {
+    flex-direction: row;
+  }
+  .rooms-details {
+    max-width: 30vw;
+    padding: 2rem;
+  }
+  .swiper {
+    max-width: 70%;
+  }
 
-    .benifits {
-        text-align: start;
-    }
-    .benifits-items {
-        flex-direction: row;
-    }
-    .benifits-card {
-        max-width: 20%;
-        margin: 1rem;
-    }
+  .benifits {
+    text-align: start;
+  }
+  .benifits-items {
+    flex-direction: row;
+  }
+  .benifits-card {
+    max-width: 20%;
+    margin: 1rem;
+  }
 
-    .activities {
-        flex-wrap: nowrap;
-    }
-    .rooms-details {
-        max-width: 43%;
-        padding: 3rem;
-    }
+  .activities {
+    flex-wrap: nowrap;
+  }
 
-    .service .title {
-        max-width: 50%;
-        font-size: 3rem;
-    }
-    .service-card {
-        text-align:left;
-    }
+  .service .title {
+    max-width: 50%;
+    font-size: 3rem;
+  }
+  .service-card {
+    text-align: left;
+  }
 
-    .discover {
-        align-items: flex-end;
-    }
-    .discover .discover-card {
-        max-width: 30%;
-        padding: 3rem 2rem 4rem 2rem;
-        margin: 8rem 10rem 8rem 0rem;
-    }
+  .discover {
+    align-items: flex-end;
+  }
+  .discover .discover-card {
+    max-width: 30%;
+    padding: 3rem 2rem 4rem 2rem;
+    margin: 8rem 10rem 8rem 0rem;
+  }
 
-    .review .benifits-items {
-        text-align: left;
-    }
-    .review .benifits-card {
-        max-width: 30%;
-        margin-bottom: 3rem;
-        margin-top: 3rem;
-    }
-    .user {
-        justify-content: start;
-    }
+  .review .benifits-items {
+    text-align: left;
+  }
+  .review .benifits-card {
+    max-width: 30%;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+  }
+  .user {
+    justify-content: start;
+  }
 
-    .location {
-        flex-direction: row;
-    }
-    .location .header-title {
-        max-width: 45%;
-        align-items:flex-start;
-    }
-    .location-map {
-        max-width: 45%;
-    }
-    
-    .suscribe {
-        flex-direction: row;
-    }
-    .suscribe .header-title {
-        max-width: 30%;
-        margin-right: 4rem;
-    }
+  .location {
+    flex-direction: row;
+  }
+  .location .header-title {
+    max-width: 45%;
+    align-items: flex-start;
+  }
+  .location-map {
+    max-width: 45%;
+  }
 
-    .footer {
-        justify-content: space-around;
-        padding-left: 0;
-    }
-    .footer-container {
-        flex-direction: row;
-        border-bottom: 1px solid rgb(172, 172, 172);
-    }
+  .suscribe {
+    flex-direction: row;
+  }
+  .suscribe .header-title {
+    max-width: 30%;
+    margin-right: 4rem;
+  }
+
+  .footer {
+    justify-content: space-around;
+    padding-left: 0;
+  }
+  .footer-container {
+    flex-direction: row;
+    border-bottom: 1px solid rgb(172, 172, 172);
+  }
 }

@@ -39,6 +39,60 @@ const checkButton = async () => {
   }, 5000);
 };
 
+// Fetching data through api
+
+const getData = (apiId) => {
+  let result = fetch(apiId).then((res) => {
+    return res.json();
+  });
+  return result;
+};
+
+// Header
+
+const headerTitle = document.querySelector(".header-title-name");
+const header = document.querySelector(".header");
+
+getData("http://localhost:8080/header").then((res) => {
+  header.style.backgroundImage = `url(${res[0].image})`;
+  headerTitle.textContent = res[0].title;
+});
+
+// Welcome section
+
+const welcomeTitle = document.querySelector(".welcome-title");
+const welcomeDetails = document.querySelector(".welcome-details");
+const welcomeManager = document.querySelector(".welcome-manager");
+const poster1 = document.querySelector(".poster-image1");
+const poster2 = document.querySelector(".poster-image2");
+const poster3 = document.querySelector(".poster-image3");
+
+getData("http://localhost:8080/welcome-data").then((res) => {
+  console.log(res[0].image.img1);
+  welcomeTitle.textContent = res[0].title;
+  welcomeDetails.textContent = res[0].details;
+  welcomeManager.textContent = res[0].manager;
+  poster1.src = res[0].image.img1;
+  poster2.src = res[0].image.img2;
+  poster3.src = res[0].image.img3;
+});
+
+// Activity data
+
+const activityHeading = document.querySelectorAll(".activity-heading");
+const activityTitle = document.querySelectorAll(".activity-title");
+const activityDetails = document.querySelectorAll(".activity-details");
+const activityImage = document.querySelectorAll(".activity-image");
+
+getData("http://localhost:8080/activity-data").then((res) => {
+  for (i = 0; i < activityHeading.length; i++) {
+    console.log(activityImage);
+    activityHeading[i].textContent = res[i].heading;
+    activityTitle[i].textContent = res[i].title;
+    activityDetails[i].textContent = res[i].details;
+    activityImage[i].src = res[i].images;
+  }
+});
 // Update Card data
 
 const serviceCards = document.querySelectorAll(".service-card");
@@ -48,12 +102,6 @@ const cardTitle = document.querySelectorAll(".service-title");
 const cardDetails = document.querySelectorAll(".service-details");
 const serviceImage = document.querySelectorAll(".service-image");
 
-const getData = (apiId) => {
-  let result = fetch(apiId).then((res) => {
-    return res.json();
-  });
-  return result;
-};
 getData("http://localhost:8080/card-data").then((res) => {
   for (i = 0; i < serviceCards.length; i++) {
     cardImage[i].src = res[i].image;
@@ -62,6 +110,20 @@ getData("http://localhost:8080/card-data").then((res) => {
     cardDetails[i].textContent = res[i].details;
     serviceImage[i].src = res[i].image;
   }
+});
+
+// Say Hello
+
+const discover = document.querySelector(".discover");
+const discoverTitle = document.querySelector(".discover-title");
+const discoverDetails = document.querySelector(".discover-details");
+
+getData("http://localhost:8080/say-hello").then((res) => {
+  console.log(discoverTitle);
+  discover.style.backgroundImage = `url(${res[0].image})`;
+  discoverTitle.textContent = "Say hello to a whole new you";
+  discoverDetails.textContent =
+    "We use the best ingredients to make special and really tasty dishes.Choose what you want to eat every day. You order at the moment.";
 });
 
 // Carousel
@@ -106,7 +168,7 @@ getData("http://localhost:8080/room-data").then((res) => {
     if (slideCount > res.length - 1) {
       slideCount = 0;
     }
-    insertCarouselData(res, slideCount, "ul-slider-animation");
+    insertCarouselData(res, slideCount, "rooms-slider-back");
     slideCount++;
     flag = true;
   });
@@ -115,8 +177,26 @@ getData("http://localhost:8080/room-data").then((res) => {
     if (slideCount < 0) {
       slideCount = res.length - 1;
     }
-    insertCarouselData(res, slideCount, "rooms-slider-back");
+    insertCarouselData(res, slideCount, "ul-slider-animation");
     slideCount--;
     flag = false;
   });
+});
+
+// Suscribe data
+
+const suscribePoster1 = document.querySelector(".suscribe-poster-item1");
+const suscribePoster2 = document.querySelector(".suscribe-poster-item2");
+const suscribePoster3 = document.querySelector(".suscribe-poster-item3");
+const suscribeHeading = document.querySelector(".suscribe-heading");
+const suscribeTitle = document.querySelector(".suscribe-title");
+const suscribeDetails = document.querySelector(".suscribe-details");
+
+getData("http://localhost:8080/suscribe").then((res) => {
+  suscribePoster1.src = res[0].image.poster1;
+  suscribePoster2.src = res[0].image.poster2;
+  suscribePoster3.src = res[0].image.poster3;
+  suscribeHeading.textContent = res[0].heading;
+  suscribeTitle.textContent = res[0].title;
+  suscribeDetails.textContent = res[0].details;
 });

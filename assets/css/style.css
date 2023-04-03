@@ -173,7 +173,7 @@ body {
 .header {
   display: flex;
   flex-direction: column;
-  background-image: url(http://localhost:8080/images.header.house1);
+  background-image: url();
   background-size: cover;
   margin: var(--body-margin);
   justify-content: space-around;
@@ -436,7 +436,7 @@ body {
 
 .discover {
   display: flex;
-  background-image: url("http://localhost:8080/images.other.pool");
+  background-image: url("");
   background-repeat: no-repeat;
   background-size: cover;
   align-items: center;

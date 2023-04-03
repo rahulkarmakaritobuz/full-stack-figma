@@ -9,13 +9,6 @@ export const modifyData = async (folder, fileName, totalFormData) => {
   await fs.appendFile(filePath, JSON.stringify(totalFormData));
 };
 
-// export const onceWrite = async () => {
-//   await fs.writeFile(
-//     "./database/carouselDB/roomData.txt",
-//     JSON.stringify(card.roomData)
-//   );
-// };
-
 export const readCardData = async (folder, fileName) => {
   const filePath = path.join(path.resolve(), "database", folder, fileName);
   console.log(filePath);

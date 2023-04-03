@@ -17,8 +17,45 @@ const server = http.createServer(async (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Headers", "*");
   let links = req.url.split(".");
-
-  if (req.url === "/room-data") {
+  if (req.url === "/header") {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.writeHead(200, { "content-Type": "application/json" });
+    const data = await serverModule.readCardData("headerDB", "headerData.txt");
+    res.end(data);
+  } else if (req.url === "/suscribe") {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.writeHead(200, { "content-Type": "application/json" });
+    const data = await serverModule.readCardData(
+      "suscribeDB",
+      "suscribeData.txt"
+    );
+    res.end(data);
+    console.log(JSON.parse(data));
+  } else if (req.url === "/say-hello") {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.writeHead(200, { "content-Type": "application/json" });
+    const data = await serverModule.readCardData("sayHelloDB", "helloData.txt");
+    res.end(data);
+    console.log(JSON.parse(data));
+  } else if (req.url === "/activity-data") {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.writeHead(200, { "content-Type": "application/json" });
+    const data = await serverModule.readCardData(
+      "activityDB",
+      "activityData.txt"
+    );
+    res.end(data);
+    console.log(JSON.parse(data));
+  } else if (req.url === "/welcome-data") {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.writeHead(200, { "content-Type": "application/json" });
+    const data = await serverModule.readCardData(
+      "welcomeDB",
+      "welcomeData.txt"
+    );
+    res.end(data);
+    console.log(JSON.parse(data));
+  } else if (req.url === "/room-data") {
     res.writeHead(200, { "content-Type": "application/json" });
     const data = await serverModule.readCardData("carouselDB", "roomData.txt");
     res.end(data);

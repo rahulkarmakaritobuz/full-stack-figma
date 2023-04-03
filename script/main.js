@@ -5,9 +5,6 @@ const checkOutDate = document.getElementById("checkOutDate");
 const adults = document.getElementById("adults");
 const children = document.getElementById("children");
 const check = document.getElementById("check");
-
-let formDB = [];
-
 const emailId = document.getElementById("emailId");
 const joinUs = document.getElementById("join");
 
@@ -68,7 +65,6 @@ const poster2 = document.querySelector(".poster-image2");
 const poster3 = document.querySelector(".poster-image3");
 
 getData("http://localhost:8080/welcome-data").then((res) => {
-  console.log(res[0].image.img1);
   welcomeTitle.textContent = res[0].title;
   welcomeDetails.textContent = res[0].details;
   welcomeManager.textContent = res[0].manager;
@@ -86,7 +82,6 @@ const activityImage = document.querySelectorAll(".activity-image");
 
 getData("http://localhost:8080/activity-data").then((res) => {
   for (i = 0; i < activityHeading.length; i++) {
-    console.log(activityImage);
     activityHeading[i].textContent = res[i].heading;
     activityTitle[i].textContent = res[i].title;
     activityDetails[i].textContent = res[i].details;
@@ -119,7 +114,6 @@ const discoverTitle = document.querySelector(".discover-title");
 const discoverDetails = document.querySelector(".discover-details");
 
 getData("http://localhost:8080/say-hello").then((res) => {
-  console.log(discoverTitle);
   discover.style.backgroundImage = `url(${res[0].image})`;
   discoverTitle.textContent = "Say hello to a whole new you";
   discoverDetails.textContent =
@@ -158,7 +152,6 @@ const insertCarouselData = (res, count, toogleClass) => {
 };
 
 getData("http://localhost:8080/room-data").then((res) => {
-  console.log(res.length);
   if (slideCount === 0) {
     insertCarouselData(res, slideCount);
     slideCount++;
@@ -181,6 +174,24 @@ getData("http://localhost:8080/room-data").then((res) => {
     slideCount--;
     flag = false;
   });
+});
+
+// Review
+
+const reviewImage = document.querySelectorAll(".review-image");
+const reviewName = document.querySelectorAll(".review-name");
+const reviewDate = document.querySelectorAll(".review-date");
+const reviewHeading = document.querySelectorAll(".review-heading");
+const reviewContent = document.querySelectorAll(".review-content");
+
+getData("http://localhost:8080/review").then((res) => {
+  for (i = 0; i < res.length; i++) {
+    reviewImage[i].style.backgroundImage = `url(${res[i].image})`;
+    reviewName[i].textContent = res[i].name;
+    reviewDate[i].textContent = res[i].reviewData;
+    reviewHeading[i].textContent = res[i].heading;
+    reviewContent[i].textContent = res[i].content;
+  }
 });
 
 // Suscribe data

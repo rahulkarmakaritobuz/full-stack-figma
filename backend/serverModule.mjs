@@ -1,8 +1,6 @@
-// const fs = require("fs/promises");
 import * as fs from "fs/promises";
 import * as path from "path";
 import { json } from "stream/consumers";
-// import * as card from "./database/carouselDB/roomData.mjs";
 
 export const modifyData = async (folder, fileName, totalFormData) => {
   const filePath = path.join(path.resolve(), "database", folder, fileName);
